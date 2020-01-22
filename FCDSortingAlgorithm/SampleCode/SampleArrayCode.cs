@@ -39,5 +39,27 @@ namespace FCDSortingAlgorithm.SampleCode
 
             return count;
         }
+
+        public IDictionary<string, int> GetDuplicateWords(string[] wordArray)
+        {
+            // Time Complexity >> O(n)
+            // Space Complexity >> O(n)
+            IDictionary<string, int> wordCount = new Dictionary<string, int>();
+
+            foreach (var word in wordArray)
+            {
+                if (wordCount.ContainsKey(word))
+                {
+                    wordCount[word]++;
+                }
+                else
+                {
+                    wordCount.Add(word, 1);
+                }
+
+            }
+
+            return wordCount;
+        }
     }
 }
